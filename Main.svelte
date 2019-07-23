@@ -3,9 +3,56 @@
     import Topper from './Topper.svelte';
 </script>
 
+<style>
+  body{
+    margin: 0;
+  }
+  img {
+    width: 100%;
+  }
+  a {
+    text-decoration: none;
+    color: #222;
+  }
+  .flex-container{
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .series-intro{
+    display: flex;
+    flex-direction: row;
+  }
+  .series-text{
+    flex-basis: 60vw;
+    padding: 10px;
+  }
+  .series-topics{
+    flex-basis: 25vw;
+    padding: 10px;
+  }
+  .series-topics ul{
+    list-style-type: none;
+    padding-inline-start: 20px;
+    line-height: 1.4; 
+    font-size: 1.3em;
+    font-weight: 600;
+    font-family: 'Unify Sans', Tahoma, sans-serif;
+    border-left: 1px solid #222;
+  }
+  .series-topics ul a{
+    color: #b10000;
+    text-decoration: underline solid #b10000;
+  }
+  .dairy-topics{
+    display: flex;
+    flex-direction: column;
+  }
+</style>
 
 <body>
-
 <Topper/>
 
 <div class="flex-container">

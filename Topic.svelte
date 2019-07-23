@@ -20,7 +20,7 @@
 </script>
 
 <style>
- .topic{
+.topic{
     margin: 5% 0;
     border: 8px solid #b10000;
     box-shadow: 2px 2px 2px #ccc;
