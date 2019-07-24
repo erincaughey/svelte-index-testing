@@ -1,4 +1,5 @@
 <script>
+    export let topic;
     export let topicTitle;
     export let topicImage;
     export let topicDescription;
@@ -8,14 +9,14 @@
     // how to we incorporate the link position
 
     let links = [
-        {topicTitle: 'The Crisis', topicImage: '', topicDescription: '', linkUrl: '', linkText: 'primary'},
-        {topicTitle: 'The Crisis', topicImage: '', topicDescription: '', linkUrl: '', linkText: 'sub one'},
-        {topicTitle: 'The Crisis', topicImage: '', topicDescription: '', linkUrl: '', linkText: 'sub two'},
-        {topicTitle: 'The Crisis', topicImage: '', topicDescription: '', linkUrl: '', linkText: 'sub three'},
-        {topicTitle: 'Economics', topicImage: '', topicDescription: '', linkUrl: '', linkText: 'primary'},
-        {topicTitle: 'Economics', topicImage: '', topicDescription: '', linkUrl: '', linkText: 'sub one'},
-        {topicTitle: 'Economics', topicImage: '', topicDescription: '', linkUrl: '', linkText: 'sub two'},
-        {topicTitle: 'Economics', topicImage: '', topicDescription: '', linkUrl: '', linkText: 'sub three'}
+        {topic: 'crisis', topicTitle: 'The Crisis', topicImage: '', topicDescription: 'Farmers cling to a dream that, for some, has become a nightmare.', linkUrl: '', linkText: 'primary', linkPosition: 1},
+        {topic: 'crisis', topicTitle: 'The Crisis', topicImage: '', topicDescription: '', linkUrl: '', linkText: 'sub one', linkPosition: 2},
+        {topic: 'crisis', topicTitle: 'The Crisis', topicImage: '', topicDescription: '', linkUrl: '', linkText: 'sub two', linkPosition: 3},
+        {topic: 'crisis', topicTitle: 'The Crisis', topicImage: '', topicDescription: '', linkUrl: '', linkText: 'sub three', linkPosition: 4},
+        {topic: 'economics', topicTitle: 'Economics', topicImage: '', topicDescription: '', linkUrl: '', linkText: 'primary', linkPosition: 1},
+        {topic: 'economics', topicTitle: 'Economics', topicImage: '', topicDescription: '', linkUrl: '', linkText: 'sub one', linkPosition: 2},
+        {topic: 'economics', topicTitle: 'Economics', topicImage: '', topicDescription: '', linkUrl: '', linkText: 'sub two', linkPosition: 3},
+        {topic: 'economics', topicTitle: 'Economics', topicImage: '', topicDescription: '', linkUrl: '', linkText: 'sub three', linkPosition: 4}
     ]
 </script>
 
@@ -77,17 +78,17 @@
 }
 </style>
 
-<div class="topic" id="overview">
+<div class="topic" id={topic}>
     <h2 class="topic-title">{topicTitle}</h2>
-    {#each links as {topicImage, topicDescription, linkUrl, linkText}, i}
+    {#each links as {topic, topicImage, topicDescription, linkUrl, linkText, linkPosition}, i}
     <div class="topic-items">
         <div class="topic-img">
-            <img src="{topicImage}">
+            <img src="{topicImage}" alt=''>
         </div>
         <div class="topic-links">
         <ul>
             <li><a data-link-position={linkPosition} href="{linkUrl}">{linkText}</a></li>
-            <li class="topic-summary">Farmers cling to a dream that, for some, has become a nightmare.</li>
+            <li class="topic-summary">{topicDescription}</li>
             <li><a data-link-position={linkPosition} href="{linkUrl}">{linkText}</a></li>
             <li><a data-link-position={linkPosition} href="{linkUrl}">{linkText}</a></li>
             <li><a data-link-position={linkPosition} href="{linkUrl}">{linkText}</a></li>

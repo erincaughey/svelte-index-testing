@@ -26,7 +26,5 @@
 }
 </style>
 
-<script src="/shared/header/v5/header.js"></script>
-
 <div class="series-topper"></div>
 <div class="topper-title">{topLabel}</div>

@@ -1,7 +1,17 @@
 <script>
     import Topic from './Topic.svelte';
     import Topper from './Topper.svelte';
+    import Promo from './Promo.svelte';
+    import Metadata from './Metadata.svelte';
 </script>
+
+<head>
+<Metadata />
+<link rel="shortcut icon" href="/shared/media/js-favicon.png">
+<link href="/shared/css/unify/unify-fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="css/story-template.css" type="text/css" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<script src="js/jquery.min.js"></script>
 
 <style>
   body{
@@ -50,9 +60,37 @@
     display: flex;
     flex-direction: column;
   }
+
+  @media (max-width: 768px) {
+    .topper-title{
+      left: 30%;
+      font-size: 2rem;
+    }
+    
+    .series-intro{
+      display: flex;
+      flex-direction: column;
+    }
+    .series-topics ul{
+      border-left: none;
+      padding: 0 10px 50px 10px;
+      text-align: center;
+    }
+    .topic-items{
+      display: flex;
+      flex-direction: column;
+    }
+    .highlight-box{
+      display: flex;
+      flex-direction: column;
+    }
+  }
 </style>
 
+</head>
+
 <body>
+<script src="/shared/header/v5/header.js"></script>
 <Topper/>
 
 <div class="flex-container">
@@ -65,7 +103,8 @@
     <div class="series-topics">
       <ul>
         <strong>Topics</strong>
-        <li><a href="#overview">The Crisis</a></li>
+        <li><a href="#{topicTitle}" data-link-position={linkPosition}>{topicTitle}</a></li>
+        <!-- is this right? -->
         <li><a href="#econ">Economics</a></li>
         <li><a href="#consumer">Consumerism</a></li>
         <li><a href="#immigration">Global Impact</a></li>
@@ -76,8 +115,9 @@
   </div>
   <div class="dairy-topics">
 
-    <Topic topicTitle={The Crisis}/>
-    <Topic topicTitle={Economics}/>
+    <Topic topic={crisis} />
+    <Promo promoPosition={1}/>
+    <Topic topic={economics} />
 
       <!-- <div class="topic" id="overview">
         <h2 class="topic-title">The Crisis</h2>
