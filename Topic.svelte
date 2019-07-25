@@ -79,7 +79,9 @@
 </style>
 
 <div class="topic" id={topic}>
-    <h2 class="topic-title">{topicTitle}</h2>
+    <slot name="topic">
+        <h2 class="topic-title">topic</h2>
+    </slot>
     {#each links as {topic, topicImage, topicDescription, linkUrl, linkText, linkPosition}, i}
     <div class="topic-items">
         <div class="topic-img">

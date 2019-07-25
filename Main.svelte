@@ -91,6 +91,7 @@
 
 <body>
 <script src="/shared/header/v5/header.js"></script>
+
 <Topper/>
 
 <div class="flex-container">
@@ -115,7 +116,9 @@
   </div>
   <div class="dairy-topics">
 
-    <Topic topic={crisis} />
+    <Topic topic={crisis}>
+      <h2 slot="topic">The Crisis</h2>
+    </Topic>
     <Promo promoPosition={1}/>
     <Topic topic={economics} />
 
