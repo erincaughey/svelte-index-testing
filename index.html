@@ -59,7 +59,27 @@
         top: 12%;
         left: 7%;
         font-weight: 700;
+        text-align: center;
         font-family: 'Unify Sans', Tahoma, sans-serif;
+      }
+      .topper-subhead{
+        text-transform: uppercase;
+        font-family: 'Unify Sans', Tahoma, sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        text-align: center;
+        color: #636363;
+        position: relative;
+      }
+      .topper-subhead::before{
+        display: block;
+        position: absolute;
+        top: -30px;
+        left: 45%;
+        content: " ";
+        width: 100px;
+        height: 230px;
+        border-top: 8px solid #6e7829;
       }
       .flex-container{
         display: flex;
@@ -100,6 +120,14 @@
         border-left: 3px solid #b10000;
         padding-left: 10px;
       }
+
+      .series-topics ul a.upcoming{
+        border-left: 3px solid #636363;
+        padding-left: 10px;
+        cursor: not-allowed;
+        color: #b4b4b4;
+      }
+
       .dairy-topics{
         display: flex;
         flex-direction: column;
@@ -206,6 +234,7 @@
       .highlight-title{
         margin-block-start: 0;
         margin-block-end: 1em;
+        font-size: 1.7rem;
       }
       .highlight-title:hover{
         color: #b10000;
@@ -263,15 +292,23 @@
           top: 7%;
           font-size: 2rem;
         }
-        
         .series-intro{
           display: flex;
           flex-direction: column;
         }
+        
         .series-topics ul{
           border-left: none;
           padding: 0 10px 50px 10px;
           text-align: center;
+        }
+        .series-topics ul a {
+          border-left: 0;
+          padding-left: 0;
+        }
+        .series-topics ul a.upcoming {
+          border-left: 0;
+          padding-left: 0;
         }
         .topic-items{
           display: flex;
@@ -312,7 +349,7 @@
 <script src="/shared/header/v5/header.js"></script>
 
 <div class="series-topper"></div>
-<div class="topper-title">Dairyland in Distress</div>
+<div class="topper-title">Dairyland in Distress<br><span class="topper-subhead">A look at the perils facing a signature Wisconsin industry</span></div>
 
 <div class="flex-container">
   <div class="series-intro">
@@ -324,20 +361,23 @@
     <div class="series-topics">
       <ul>
         <strong>Chapters</strong>
-        <li><a href="#overview">An industry in turmoil</a></li>
-        <li><a href="#econ">Whipsawed by economics</a></li>
-        <li><a href="#consumer">Declining popularity</a></li>
-        <li><a href="#immigration">World of troubles</a></li>
-        <li><a href="#mex-can">A tale of three countries</a></li>
-        <li><a href="#immigration">Immigration</a></li>
-        <li><a href="#environment">Environment</a></li>
-        <li><a href="#solutions">An uncertain future</a></li>
+        <li><a href="#crisis">An industry in turmoil</a></li>
+        <li><a href="#economics">Economic breakdown</a></li>
+        <li><a class="upcoming" href="#consumer">Declining popularity</a></li>
+        <li><a class="upcoming" href="#global">World of troubles</a></li>
+        <li><a class="upcoming" href="#mex-can">Trade challenges</a></li>
+        <li><a class="upcoming" href="#immigration">Workforce woes</a></li>
+        <li><a class="upcoming" href="#environment">Big farms, big issues</a></li>
+        <li><a class="upcoming" href="#solutions">An uncertain future</a></li>
         <!-- <li class="topic-summary">More...</li> -->
       </ul>
     </div>
   </div>
+
+  <!-- TOPIC BOX -->
+  <div id="crisis"></div>
   <div class="dairy-topics">   
-      <div class="topic" id="overview">
+      <div class="topic">
         <h2 class="topic-title">An industry in turmoil</h2>
         <div class="topic-items">
           <div class="topic-img">
@@ -345,7 +385,7 @@
           </div>
           <div class="topic-links">
             <ul>
-              <li><a href="https://www.jsonline.com/in-depth/news/special-reports/dairy-crisis/2019/02/21/wisconsin-dairy-farms-failing-milk-prices-fall/2540796002/"><strong>Part one:</strong> Dairy farmers are in crisis — and it could change Wisconsin forever</a></li>
+              <li><a href="https://www.jsonline.com/in-depth/news/special-reports/dairy-crisis/2019/02/21/wisconsin-dairy-farms-failing-milk-prices-fall/2540796002/"><strong>Chapter one:</strong> Dairy farmers are in crisis — and it could change Wisconsin forever</a></li>
               <li class="topic-summary">Farmers cling to a dream that, for some, has become a nightmare.</li>
               <li><a href="https://www.jsonline.com/story/news/special-reports/dairy-crisis/2019/03/25/wisconsin-dairy-farms-seek-higher-milk-prices-before-its-too-late-high-cost-economic-downturn-farmer/3190067002/">'We need to be heard now because time is running out'</a></li>
               <li><a href="https://www.jsonline.com/story/news/special-reports/dairy-crisis/2019/03/25/wisconsin-dairy-crisis-fremont-farmers-fight-survive-after-55-years/2787644002/">Fremont dairy farmers fight to survive after 55 years</a></li>
@@ -357,7 +397,42 @@
         </div>
       </div>
 
+
+      <div id="economics"></div>
+      <div class="topic">
+        <h2 class="topic-title">Economic breakdown</h2>
+        <div class="topic-items">
+          <div class="topic-img">
+              <img src="https://www.gannett-cdn.com/presto/2019/05/07/PMJS/4dc25b7f-4cd5-41b8-b3b9-5f9aa9410e94-MJS_monroe_econ_1.jpg_spotlight_Monroe.jpg?width=1200">
+          </div>
+          <div class="topic-links">
+            <ul>
+              <li><a href="https://www.jsonline.com/in-depth/news/special-reports/dairy-crisis/2019/05/16/wisconsin-dairy-farms-closing-milk-prices-drop-economics-get-tough/3508060002/"><strong>Chapter two:</strong> Brutal economic system forcing dairy farmers to call it quits</a></li>
+              <li class="topic-summary">Family farms are at the mercy of trade wars, economies of scale and a complex pricing system.</li>
+              <li><a href="https://www.jsonline.com/in-depth/news/special-reports/dairy-crisis/2019/05/28/wisconsin-auctioneer-dairy-farms-up-for-sale-closing-farmers-lose-money-quit/3577457002/">‘It ain’t fun anymore’: Auctioneers are busy selling off dying Wisconsin dairy farms</a></li>
+              <li><a href="https://projects.jsonline.com/apps/dairyland-in-distress/can-you-survive-the-dairy-crisis.html"><strong>Game:</strong> Can you survive the dairy crisis?</a></li>
+              <li><a href="https://www.jsonline.com/story/news/special-reports/dairy-crisis/2019/05/16/wisconsin-1933-dairy-farmer-strikes-ended-farmers-death/1169163001/"><strong>Historical perspecitve:</strong> The milk strikes of 1933 were the worst year for Wisconsin dairy farms</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <!-- <div class="highlight-box" id="charts">
+        <div class="highlight-one">
+          <h3 class="highlight-title-one">The dairy crisis in 6 charts</h3>
+          <a href="">
+            <img src="https://www.gannett-cdn.com/indepth-static-assets/uploads/master/3508060002/d2f4c595-18b6-471f-815f-a3d2816b2d1c-chart-story-promo-1.png?width=1800">
+          </a>
+        </div>
+        <div class="highlight-two">
+          <h3 class="highlight-title-two">Farms lost since 2014</h3>
+          <a href="">
+            <img src="https://www.gannett-cdn.com/indepth-static-assets/uploads/master/3508060002/4d9eb280-8580-4cbf-b0a8-095c443d6c30-dairy-interactive-promo-1.png?width=1800">
+          </a>
+        </div>
+      </div> -->
+
+      <div class="highlight-box" id="charts">
         <div class="highlight-info">
           <a href="">
             <h3 class="highlight-title">The dairy crisis in 6 charts</h3>
@@ -383,40 +458,36 @@
             <img src="https://www.gannett-cdn.com/indepth-static-assets/uploads/master/3508060002/4d9eb280-8580-4cbf-b0a8-095c443d6c30-dairy-interactive-promo-1.png?width=1800">
           </a>
         </div>
-      </div> -->
+      </div>
 
-      <div class="highlight-box" id="charts">
-        <div class="highlight-one">
-          <h3 class="highlight-title-one">The dairy crisis in 6 charts</h3>
+      <div class="highlight-box" id="blog">
+        <div class="highlight-info">
           <a href="">
-            <img src="https://www.gannett-cdn.com/indepth-static-assets/uploads/master/3508060002/d2f4c595-18b6-471f-815f-a3d2816b2d1c-chart-story-promo-1.png?width=1800">
+            <h3 class="highlight-title">Wisconsin dairy farmers: Life in their own words</h3>
+            <div class="topic-summary">As part of a yearlong project, journalists from the Milwaukee Journal Sentinel and USA TODAY NETWORK-Wisconsin are following dairy farms of different sizes at a time when the state's rural landscape and cultural identity could be altered permanently.</div>
           </a>
         </div>
-        <div class="highlight-two">
-          <h3 class="highlight-title-two">Farms lost since 2014</h3>
+        <div class="highlight-vis">
           <a href="">
-            <img src="https://www.gannett-cdn.com/indepth-static-assets/uploads/master/3508060002/4d9eb280-8580-4cbf-b0a8-095c443d6c30-dairy-interactive-promo-1.png?width=1800">
+            <img src="media/cows.jpg">
           </a>
         </div>
       </div>
 
-      <div class="topic" id="econ">
-        <h2 class="topic-title">Whipsawed by economics</h2>
-        <div class="topic-items">
-          <div class="topic-img">
-              <img src="https://www.gannett-cdn.com/presto/2019/05/07/PMJS/4dc25b7f-4cd5-41b8-b3b9-5f9aa9410e94-MJS_monroe_econ_1.jpg_spotlight_Monroe.jpg?width=1200">
-          </div>
-          <div class="topic-links">
-            <ul>
-              <li><a href="https://www.jsonline.com/in-depth/news/special-reports/dairy-crisis/2019/05/16/wisconsin-dairy-farms-closing-milk-prices-drop-economics-get-tough/3508060002/"><strong>Part two:</strong> Brutal economic system forcing dairy farmers to call it quits</a></li>
-              <li class="topic-summary">Family farms are at the mercy of trade wars, economies of scale and a complex pricing system.</li>
-              <li><a href="https://www.jsonline.com/in-depth/news/special-reports/dairy-crisis/2019/05/28/wisconsin-auctioneer-dairy-farms-up-for-sale-closing-farmers-lose-money-quit/3577457002/">‘It ain’t fun anymore’: Auctioneers are busy selling off dying Wisconsin dairy farms</a></li>
-              <li><a href="https://projects.jsonline.com/apps/dairyland-in-distress/can-you-survive-the-dairy-crisis.html"><strong>Game:</strong> Can you survive the dairy crisis?</a></li>
-              <li><a href="https://www.jsonline.com/story/news/special-reports/dairy-crisis/2019/05/16/wisconsin-1933-dairy-farmer-strikes-ended-farmers-death/1169163001/"><strong>Historical perspecitve:</strong> The milk strikes of 1933 were the worst year for Wisconsin dairy farms</a></li>
-            </ul>
-          </div>
+      <div class="highlight-box" id="game">
+        <div class="highlight-info">
+          <a href="">
+            <h3 class="highlight-title">Can you survive the dairy crisis?</h3>
+            <div class="topic-summary">Explore the forces affecting a signature Wisconsin industry by navigating through common scenarios faced by dairy farmers.</div>
+          </a>
+        </div>
+        <div class="highlight-vis">
+          <a href="">
+            <img src="media/farm-scene.png">
+          </a>
         </div>
       </div>
+
       <!-- <div class="topic" id="consumer">
         <h2 class="topic-title">Consumerism</h2>
         <div class="topic-items">
@@ -434,23 +505,8 @@
             </ul>
           </div>
         </div>
-      </div> -->
-
-      <div class="highlight-box" id="blog">
-        <div class="highlight-info">
-          <a href="">
-            <h3 class="highlight-title">Wisconsin dairy farmers: Life in their own words</h3>
-            <div class="topic-summary">As part of a yearlong project, journalists from the Milwaukee Journal Sentinel and USA TODAY NETWORK-Wisconsin are following dairy farms of different sizes at a time when the state's rural landscape and cultural identity could be altered permanently.</div>
-          </a>
-        </div>
-        <div class="highlight-vis">
-          <a href="">
-            <img src="media/cows.jpg">
-          </a>
-        </div>
-      </div>
-
-      <!-- <div class="topic" id="immigration">
+      </div> 
+      <div class="topic" id="immigration">
         <h2 class="topic-title">Global Impact</h2>
         <div class="topic-items">
           <div class="topic-img">
@@ -486,20 +542,6 @@
           </div>
         </div>
       </div> -->
-
-      <div class="highlight-box" id="game">
-        <div class="highlight-info">
-          <a href="">
-            <h3 class="highlight-title">Can you survive the dairy crisis?</h3>
-            <div class="topic-summary">Explore the forces affecting a signature Wisconsin industry by navigating through common scenarios faced by dairy farmers.</div>
-          </a>
-        </div>
-        <div class="highlight-vis">
-          <a href="">
-            <img src="media/farm-scene.png">
-          </a>
-        </div>
-      </div>
   </div>
 </div>
 
