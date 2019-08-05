@@ -1,0 +1,7 @@
+.flex-container{
+	display: flex;
+	flex-flow: row wrap;
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 20px;
+}
