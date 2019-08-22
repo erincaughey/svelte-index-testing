@@ -52,12 +52,12 @@
 
 <div class="rest-card-mob">
     <div class="rest-img-mob">
-        <img src="{image}">
+        <img alt="" src="{image}">
     </div>
     <h4 class="rest-name">{name}</h4>
     <div class="rest-text">
         {description}
-        <a href="{anchorLink}">Read more &rarr;</a>
+        <!-- <a href="{anchorLink}">Read more &rarr;</a> -->
     </div>
     <div class="rest-filters">
         <div class="rest-item"><span class="label-1">{food}</span></div>

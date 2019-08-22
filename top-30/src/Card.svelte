@@ -52,13 +52,13 @@
 
 <div class="rest-card">
     <div class="rest-img">
-        <img src="{image}">
+        <img alt="" src="{image}">
     </div>
     <div class="rest-info">
         <h4 class="rest-name">{name}</h4>
         <div class="rest-text">
-            {descirption}
-            <a href="{anchorLink}">Read more &rarr;</a>
+            {description}
+            <!-- <a href="{anchorLink}">Read more &rarr;</a> -->
         </div>
         <div class="rest-filters">
             <div class="rest-item"><span class="label-1">{food}</span></div>

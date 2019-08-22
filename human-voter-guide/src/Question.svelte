@@ -1,5 +1,5 @@
 <script>
-    import { fly } from 'svelte/transition';
+    import { fade } from 'svelte/transition';
 
     export let category;
     export let question;
@@ -16,10 +16,10 @@
 .question-box{
     display: flex;
     margin: 5px 0;
-    padding: 5px;
+    padding: 10px;
     border: 1px solid #009bff;
-    background-color: #d4d4d4;
-    box-shadow: 2px 2px 2px #ccc;
+    background-color: #fff;
+    box-shadow: 0 0 2px #d3d3d3;
     box-sizing: border-box;
     width: 100%;
     flex-basis: 90vw;
@@ -39,7 +39,7 @@
 }
 .voter-question:before{
     font-size: 24px;
-    padding: 5px 10px;
+    padding: 3px 10px;
     content: '+';
     color: #009bff;
     font-weight: 900;
@@ -58,13 +58,13 @@
     .voter-question:before{
         font-size: 20px;
         position: absolute;
-        bottom: -50%;
+        bottom: -60%;
         right: 0;
     }
 }
 </style>
 
-<div class="question-box" on:click={handleClick} transition:fly="{{ y: 10, duration: 1000 }}">
+<div class="question-box" on:click={handleClick} transition:fade>
     <div class="qa">
         <h4 class="voter-question">{question}</h4>
         {#if active}
