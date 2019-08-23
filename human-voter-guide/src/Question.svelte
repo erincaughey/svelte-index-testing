@@ -13,6 +13,11 @@
 </script>
 
 <style>
+.category{
+    display: flex;
+    margin: 5px 0;
+    width: 100%;
+}
 .question-box{
     display: flex;
     margin: 5px 0;
@@ -64,13 +69,16 @@
 }
 </style>
 
-<div class="question-box" on:click={handleClick} transition:fade>
-    <div class="qa">
-        <h4 class="voter-question">{question}</h4>
-        {#if active}
-            <div class="voter-answer">
-                {answer}
-            </div>
-        {/if}
+<div class="category">
+    <!-- <h2 class="cat-title">{category}</h2> -->
+    <div class="question-box" on:click={handleClick} transition:fade>
+        <div class="qa">
+            <h4 class="voter-question">{question}</h4>
+            {#if active}
+                <div class="voter-answer">
+                    {answer}
+                </div>
+            {/if}
+        </div>
     </div>
 </div>

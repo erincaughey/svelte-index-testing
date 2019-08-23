@@ -27,9 +27,9 @@ body{
     top: 10px;
     left: 0;
     content: " ";
-    width: 40px;
+    width: 50px;
     height: 20px;
-    border-top: 6px solid #009bff;
+    border-top: 7px solid #009bff;
 }
 form{
 	margin: 0 auto;
@@ -67,7 +67,7 @@ form .fr_bottom_l, form .fr_bottom_r{
 }
 form .fr_button{
 	background: tomato;
-    border: 1px solid #444;
+    border: 1px solid #fff;
 	color: #fff;
 	padding: .75em 1em;
 }
@@ -76,10 +76,16 @@ form .fr_button:focus, form .fr_button:hover {
     border: 1px solid #fff;
     color: #444;
 }
+.mjs-section-break-color {
+    margin: 5% 35%;
+    width: 40%;
+    height: 10px;
+    background-color: #009bff;
+}
 .flex-container{
 	display: flex;
 	flex-flow: row wrap;
-	max-width: 900px;
+	max-width: 800px;
 	margin: 0 auto;
 	padding: 20px;
 }
