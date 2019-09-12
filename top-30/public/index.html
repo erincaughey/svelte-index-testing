@@ -4,7 +4,6 @@
 	<meta charset='utf8'>
 	<meta name='viewport' content='width=device-width'>
 
-	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
 	<link rel='icon' type='image/png' href='/favicon.png'>
 	<link rel='stylesheet' href='/global.css'>
@@ -32,15 +31,19 @@
     .card-container{
         display: flex;
         flex-flow: row wrap;
-        max-width: 1000px;
+        max-width: 970px;
+        margin: 0 auto;
     }
     .filter-container{
-        display: flex;
-        flex-flow: column;
-        min-width: 300px;
+        min-width: 250px;
         max-width: 600px;
         margin: 0 10px;
     }
+    /*.position-box{
+        position: fixed;
+        display: flex;
+        flex-flow: column;
+    }*/
     .rest-card-mob{
         display: flex;
         flex-flow: row wrap;
@@ -99,6 +102,64 @@
     .label-grey{
         color: rgb(145, 145, 145);
     }
+
+    .filter-title{
+        font-family: 'Unify Sans', Tahoma, sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+    }
+    .filter-title span{
+        border-bottom: 2px solid #009bff;
+    }
+    select{
+        border: none;
+       /*margin: 10% 0;*/
+        background-color: #fff;
+        font-family: 'Unify Sans', Tahoma, sans-serif;
+        font-weight: 400;
+        text-transform: uppercase;
+        /*width: 70%;
+        font-size: 1em;*/
+    }
+
+    .secondary-filters{
+        display: inline;
+    }
+
+    input[type='checkbox'] {
+        position: relative;
+        top: 5px;
+        width: 22px;
+        height: 22px;
+        margin: 0 .5rem;
+        background-color: white;
+        border: 1px solid #ccc;
+        outline: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        /* List some properties that might change */
+        transition-property: none;
+        transition-duration: none;
+    }
+
+    input[type='checkbox'] {
+        border-radius: 5px;
+    }
+    input[type='checkbox']:checked {
+        background-color: #feb24c;
+        border: none;
+    }
+    input[type='checkbox']:checked:after {
+        display: block;
+        content: '';
+        height: 4px;
+        width: 10px;
+        border-bottom: 3px solid #fff;
+        border-left: 3px solid #fff;
+        -webkit-transform: translate(5px, 6px) rotate(-45deg) scale(1);
+        transform: translate(5px, 6px) rotate(-45deg) scale(1);
+    }
+
 	</style>
 </head>
 
@@ -109,22 +170,23 @@
 
 
 	<div class="flex-container">
-        <div class="filter-container">
+        <!-- <div class="filter-container">
             <h4>Search the list:</h4>
+            <div class="filter-title"><span>Food type</span></div>
             <select name="food-type">
                 <option value="italian">Italian</option>
                 <option value="mexican">Mexican</option>
                 <option value="american">American</option>
                 <option value="asian">Asian</option>
             </select>
-
+            <div class="filter-title"><span>Neighborhood</span></div>
             <select name="location">
                 <option value="bay-view">Bay View</option>
                 <option value="third-ward">Third Ward</option>
                 <option value="east-side">East Side</option>
                 <option value="downtown">Downtown</option>
             </select>
-
+            <div class="filter-title"><span>Price</span></div>
             <select name="price">
                 <option value="one">$</option>
                 <option value="two">$$</option>
@@ -132,12 +194,48 @@
                 <option value="four">$$$$</option>
             </select>
 
-            <input type="checkbox" name="option1" value="brunch"> Open for brunch<br>
-            <input type="checkbox" name="option2" value="lunch"> Open for lunch<br>
-            <input type="checkbox" name="option3" value="reservations" checked> Takes reservations<br>
-            <!-- <input type="submit"> -->
-        </div>
-        <div class="card-container">
+            <div class="secondary-filters">
+                <input class="box-filter" type="checkbox" name="option1" value="brunch"> <label>Open for brunch</label><br>
+                <input class="box-filter" type="checkbox" name="option2" value="lunch"> <label>Open for lunch</label><br>
+                <input class="box-filter" type="checkbox" name="option3" value="reservations" checked> <label>Takes reservations</label><br>
+            </div>
+        </div> -->
+
+        <!-- <div class="card-container"> -->
+            <div class="filter-container">
+                <h4>Search the list:</h4>
+                <div class="filter-title"><span>Food type</span></div>
+                <select name="food-type">
+                    <option value="italian">Italian</option>
+                    <option value="mexican">Mexican</option>
+                    <option value="american">American</option>
+                    <option value="asian">Asian</option>
+                </select>
+                <div class="filter-title"><span>Neighborhood</span></div>
+                <select name="location">
+                    <option value="bay-view">Bay View</option>
+                    <option value="third-ward">Third Ward</option>
+                    <option value="east-side">East Side</option>
+                    <option value="downtown">Downtown</option>
+                </select>
+                <div class="filter-title"><span>Price</span></div>
+                <select name="price">
+                    <option value="one">$</option>
+                    <option value="two">$$</option>
+                    <option value="three">$$$</option>
+                    <option value="four">$$$$</option>
+                </select>
+
+                <div class="secondary-filters">
+                    <input class="box-filter" type="checkbox" name="option1" value="brunch"> <label>Open for
+                        brunch</label><br>
+                    <input class="box-filter" type="checkbox" name="option2" value="lunch"> <label>Open for
+                        lunch</label><br>
+                    <input class="box-filter" type="checkbox" name="option3" value="reservations" checked> <label>Takes
+                        reservations</label><br>
+                </div>
+            </div>
+
             <div class="rest-card-mob">
                 <div class="rest-img-mob">
                     <img src="https://www.gannett-cdn.com/presto/2018/10/06/PMJS/c7dbca3b-9a63-4438-a90f-92a4eead9b10-5030-LIST-SANFORD.JPG?width=400">
@@ -186,7 +284,171 @@
                     <div class="rest-label"><a href=""><span class="label-purps">More information &rarr;</span></a></div>
                 </div>
             </div>
-        </div>
+            <div class="rest-card-mob">
+                <div class="rest-img-mob">
+                    <img
+                        src="https://www.gannett-cdn.com/presto/2018/10/06/PMJS/c7dbca3b-9a63-4438-a90f-92a4eead9b10-5030-LIST-SANFORD.JPG?width=400">
+                </div>
+                <h4 class="rest-name">Sandford</h4>
+                <div class="rest-label"><span class="label-purps">type &nbsp;|&nbsp; local</span></div>
+                <div class="rest-text">
+                    Dishes can be fleeting, because Sanford serves a seasonal menu and has, long before it was cool.
+                </div>
+                <div class="rest-filter">
+                    <div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-phone"></i></span></a>
+                    </div>
+                    <div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-link"></i></span></a>
+                    </div>
+                    <div class="rest-label"><a href=""><span class="label-grey"><i
+                                    class="far fa-compass"></i></span></a></div>
+                    <div class="rest-label"><a href=""><span class="label-purps">More information &rarr;</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="rest-card-mob">
+                <div class="rest-img-mob">
+                    <img
+                        src="https://www.gannett-cdn.com/presto/2018/10/06/PMJS/c7dbca3b-9a63-4438-a90f-92a4eead9b10-5030-LIST-SANFORD.JPG?width=400">
+                </div>
+                <h4 class="rest-name">Sandford</h4>
+                <div class="rest-label"><span class="label-purps">type &nbsp;|&nbsp; local</span></div>
+                <div class="rest-text">
+                    Dishes can be fleeting, because Sanford serves a seasonal menu and has, long before it was cool.
+                </div>
+                <div class="rest-filter">
+                    <div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-phone"></i></span></a>
+                    </div>
+                    <div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-link"></i></span></a>
+                    </div>
+                    <div class="rest-label"><a href=""><span class="label-grey"><i
+                                    class="far fa-compass"></i></span></a></div>
+                    <div class="rest-label"><a href=""><span class="label-purps">More information &rarr;</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="rest-card-mob">
+                <div class="rest-img-mob">
+                    <img
+                        src="https://www.gannett-cdn.com/presto/2018/10/06/PMJS/c7dbca3b-9a63-4438-a90f-92a4eead9b10-5030-LIST-SANFORD.JPG?width=400">
+                </div>
+                <h4 class="rest-name">Sandford</h4>
+                <div class="rest-label"><span class="label-purps">type &nbsp;|&nbsp; local</span></div>
+                <div class="rest-text">
+                    Dishes can be fleeting, because Sanford serves a seasonal menu and has, long before it was cool.
+                </div>
+                <div class="rest-filter">
+                    <div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-phone"></i></span></a>
+                    </div>
+                    <div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-link"></i></span></a>
+                    </div>
+                    <div class="rest-label"><a href=""><span class="label-grey"><i
+                                    class="far fa-compass"></i></span></a></div>
+                    <div class="rest-label"><a href=""><span class="label-purps">More information &rarr;</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="rest-card-mob">
+                <div class="rest-img-mob">
+                    <img
+                        src="https://www.gannett-cdn.com/presto/2018/10/06/PMJS/c7dbca3b-9a63-4438-a90f-92a4eead9b10-5030-LIST-SANFORD.JPG?width=400">
+                </div>
+                <h4 class="rest-name">Sandford</h4>
+                <div class="rest-label"><span class="label-purps">type &nbsp;|&nbsp; local</span></div>
+                <div class="rest-text">
+                    Dishes can be fleeting, because Sanford serves a seasonal menu and has, long before it was cool.
+                </div>
+                <div class="rest-filter">
+                    <div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-phone"></i></span></a>
+                    </div>
+                    <div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-link"></i></span></a>
+                    </div>
+                    <div class="rest-label"><a href=""><span class="label-grey"><i
+                                    class="far fa-compass"></i></span></a></div>
+                    <div class="rest-label"><a href=""><span class="label-purps">More information &rarr;</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="rest-card-mob">
+                <div class="rest-img-mob">
+                    <img
+                        src="https://www.gannett-cdn.com/presto/2018/10/06/PMJS/c7dbca3b-9a63-4438-a90f-92a4eead9b10-5030-LIST-SANFORD.JPG?width=400">
+                </div>
+                <h4 class="rest-name">Sandford</h4>
+                <div class="rest-label"><span class="label-purps">type &nbsp;|&nbsp; local</span></div>
+                <div class="rest-text">
+                    Dishes can be fleeting, because Sanford serves a seasonal menu and has, long before it was cool.
+                </div>
+                <div class="rest-filter">
+                    <div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-phone"></i></span></a>
+                    </div>
+                    <div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-link"></i></span></a>
+                    </div>
+                    <div class="rest-label"><a href=""><span class="label-grey"><i
+                                    class="far fa-compass"></i></span></a></div>
+                    <div class="rest-label"><a href=""><span class="label-purps">More information &rarr;</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="rest-card-mob">
+                <div class="rest-img-mob">
+                    <img
+                        src="https://www.gannett-cdn.com/presto/2018/10/06/PMJS/c7dbca3b-9a63-4438-a90f-92a4eead9b10-5030-LIST-SANFORD.JPG?width=400">
+                </div>
+                <h4 class="rest-name">Sandford</h4>
+                <div class="rest-label"><span class="label-purps">type &nbsp;|&nbsp; local</span></div>
+                <div class="rest-text">
+                    Dishes can be fleeting, because Sanford serves a seasonal menu and has, long before it was cool.
+                </div>
+                <div class="rest-filter">
+                    <div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-phone"></i></span></a>
+                    </div>
+                    <div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-link"></i></span></a>
+                    </div>
+                    <div class="rest-label"><a href=""><span class="label-grey"><i
+                                    class="far fa-compass"></i></span></a></div>
+                    <div class="rest-label"><a href=""><span class="label-purps">More information &rarr;</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="rest-card-mob">
+                <div class="rest-img-mob">
+                    <img
+                        src="https://www.gannett-cdn.com/presto/2018/10/06/PMJS/c7dbca3b-9a63-4438-a90f-92a4eead9b10-5030-LIST-SANFORD.JPG?width=400">
+                </div>
+                <h4 class="rest-name">Sandford</h4>
+                <div class="rest-label"><span class="label-purps">type &nbsp;|&nbsp; local</span></div>
+                <div class="rest-text">
+                    Dishes can be fleeting, because Sanford serves a seasonal menu and has, long before it was cool.
+                </div>
+                <div class="rest-filter">
+                    <div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-phone"></i></span></a>
+                    </div>
+                    <div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-link"></i></span></a>
+                    </div>
+                    <div class="rest-label"><a href=""><span class="label-grey"><i
+                                    class="far fa-compass"></i></span></a></div>
+                    <div class="rest-label"><a href=""><span class="label-purps">More information &rarr;</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="rest-card-mob">
+                <div class="rest-img-mob">
+                    <img src="https://www.gannett-cdn.com/presto/2018/10/06/PMJS/c7dbca3b-9a63-4438-a90f-92a4eead9b10-5030-LIST-SANFORD.JPG?width=400">
+                </div>
+                <h4 class="rest-name">Sandford</h4>
+                <div class="rest-label"><span class="label-purps">type &nbsp;|&nbsp; local</span></div>
+                <div class="rest-text">
+                    Dishes can be fleeting, because Sanford serves a seasonal menu and has, long before it was cool.
+                </div>
+                <div class="rest-filter">
+                    <div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-phone"></i></span></a></div>
+                    <div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-link"></i></span></a></div>
+                    <div class="rest-label"><a href=""><span class="label-grey"><i class="far fa-compass"></i></span></a></div>
+                    <div class="rest-label"><a href=""><span class="label-purps">More information &rarr;</span></a></div>
+                </div>
+            </div>
+            
+        <!-- </div> -->
 	</div>
 	<!-- <div class="flex-container">
 		<div class="rest-card">
