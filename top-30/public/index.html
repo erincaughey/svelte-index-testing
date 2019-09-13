@@ -160,6 +160,36 @@
         transform: translate(5px, 6px) rotate(-45deg) scale(1);
     }
 
+    .root {
+        height: 60;
+        flex-grow: 1;
+    }
+    .static {
+        height: 60;
+    }
+    .badge {
+        margin-left: 10;
+        opacity: 0.75;
+        height: 60;
+    }
+    .logo {
+        height: 60;
+        margin-left: -5;
+        margin-right: 30;
+        opacity: 0.75;
+    }
+    h1 {
+        font-size: 40;
+        flex-grow: 1;
+    }
+    .moreInfo {
+        font-size: 14;
+        text-align: 'left';
+    }
+    .moreInfoText {
+        padding-left: 5;
+    }
+
 	</style>
 </head>
 
@@ -170,6 +200,18 @@
 
 
 	<div class="flex-container">
+                    
+    <div class="root">
+        <div class="static"></div>
+        <div position="fixed" class="root">
+            <img class="badge" src="media/badge.png" alt="Badge icon for Milwaukee Journal Sentinel" />
+            <img class="logo" src="media/logo.png" alt="Logo text for Milwaukee Journal Sentinel" />
+            <h1 color="inherit">
+                Milwaukee Homicides
+            </h1>
+        </div>
+    </div>
+
         <!-- <div class="filter-container">
             <h4>Search the list:</h4>
             <div class="filter-title"><span>Food type</span></div>
