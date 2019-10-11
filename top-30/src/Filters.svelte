@@ -19,6 +19,14 @@
     top: 0;
     background-color: #fff;
 }
+select{
+    border: 1px solid #222;
+    margin: 1%;
+    background-color: #fff;
+    font-family: 'Unify Sans', Tahoma, sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+}
 .position-box{
     display: flex;
 }
@@ -108,6 +116,8 @@ a:focus + .tool-tip .tool-tip__info {
         </div>
 
         <h4>Search the list:</h4>
+
+        <!-- Loop through uniques -->
         <select name="food-type">
             <option value="cuisine">Cuisine</option>
             <option value="italian">Italian</option>

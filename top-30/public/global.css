@@ -3,3 +3,9 @@
 	flex-flow: row wrap;
 	margin: 0 auto;
 }
+img{
+	width: 100%;;
+}
+a {
+	text-decoration: none;
+}

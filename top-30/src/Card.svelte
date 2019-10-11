@@ -1,4 +1,5 @@
 <script>
+    import jquery from 'jquery';
     export let image;
     export let rank;
     export let restaurant;
@@ -8,22 +9,27 @@
     export let phone;
     export let website;
     export let location;
+    let url = 'https://www.jsonline.com/in-depth/entertainment/dining/carol-deptolla/2019/10/11/best-restaurants-milwaukee-2019-critic-carol-deptollas-top-30/2338732001/';
     export let anchor;
 
-    $(document).ready(function () {
-        var $checkboxes = $('input[type="checkbox"]');
+    //if has rank
+    //export let url = 'https://www.jsonline.com/in-depth/entertainment/dining/carol-deptolla/2019/10/11/best-restaurants-milwaukee-2019-critic-carol-deptollas-top-30/2338732001/';
+    //export let url = 'https://www.jsonline.com/in-depth/entertainment/dining/carol-deptolla/2019/10/11/best-casual-cheap-restaurants-milwaukee-2019-carol-deptolla-top-50/3902521002/';
+
+    jquery(document).ready(function () {
+        var $checkboxes = jquery('input[type="checkbox"]');
 
         $checkboxes.change(function () {
             var countCheckedCheckboxes = $checkboxes.filter(':checked').length;
-            $('#count-checked-checkboxes').text(countCheckedCheckboxes);
-            $('#edit-count-checked-checkboxes').val(countCheckedCheckboxes);
+            jquery('#count-checked-checkboxes').text(countCheckedCheckboxes);
+            jquery('#edit-count-checked-checkboxes').val(countCheckedCheckboxes);
         });
     });
 
     // TWEET UPDATED TEXT
-    $('#countLink').click(function () {
+    jquery('#countLink').click(function () {
         // Get the count text
-        var countText = $('#count').text();
+        var countText = jquery('#count').text();
         // Convert to string
         var countStr = countText.toString();
         // Find count length
@@ -39,7 +45,7 @@
 
         // Update the link
         var linkRef = "http://twitter.com/share?url=https://www.jsonline.com/top30&text=" + countStr + " " + "via @journalsentinel and @mkediner."; //+ "&screen_name=mkediner"
-        $('#countLink').attr('href', linkRef);
+        jquery('#countLink').attr('href', linkRef);
     });
 </script>
 
@@ -92,7 +98,7 @@
 .fab.fa-twitter{
     color: #999;
 }
-.rest-card-mob{
+.rest-card{
     display: flex;
     flex-flow: row wrap;
     flex-direction: column;
@@ -101,37 +107,22 @@
     border: 1px solid #ccc;
     margin: 10px;
 }
-.rest-card{
-    display: flex;
-    flex-direction: row;
-    max-width: 600px;
-    box-shadow: 1px 1px 2px #434343;
-    border: 1px solid #ccc;
-}
-.rest-img-mob{
+
+.rest-img{
     width: 100%;
 }
-.rest-img{
-    flex-basis: 50vw;
-}
-.rest-card h4, .rest-card-mob h4{
+.rest-card h4{
     font-family: 'Unify Sans', Tahoma, sans-serif;
     padding-left: 10px;
     font-size: 1.4em;
     margin-block-start: .6em;
     margin-block-end: .6em;
 }
-.rest-info{
-    flex-basis: 50vw;
-}
 .rest-text{
     padding: 10px;
     font-size: 15px;
     font-family: 'Unify Sans', Tahoma, sans-serif;
     color: #333;
-}
-.rest-text a{
-    color: #8A32A3;
 }
 .rest-filter{
     display: flex;
@@ -151,14 +142,6 @@
 }
 .label-grey{
     color: rgb(145, 145, 145);
-}
-select{
-    border: 1px solid #222;
-    margin: 1%;
-    background-color: #fff;
-    font-family: 'Unify Sans', Tahoma, sans-serif;
-    font-weight: 400;
-    text-transform: uppercase;
 }
 
 /*** custom checkboxes ***/
@@ -198,9 +181,9 @@ select{
             <div class="count-checkboxes-wrapper">
                 <div id="count">
                     <span class="end-count" id="count-checked-checkboxes">0</span> restaurants visited 
-                        <span class="checklist-share-button-tw">
-                            <span id="sharing">
-                                <a id="countLink" href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <span class="checklist-share-button-tw">
+                        <span id="sharing">
+                            <a id="countLink" href="#something" target="_blank"><i class="fab fa-twitter"></i></a>
                         </span>
                     </span>
                 </div> 
@@ -208,85 +191,30 @@ select{
         </div>
     </div>
 
-    <div class="rest-card-mob">
-        <div class="rest-img-mob">
-            <img src="https://www.gannett-cdn.com/presto/2018/10/06/PMJS/c7dbca3b-9a63-4438-a90f-92a4eead9b10-5030-LIST-SANFORD.JPG?width=400">
+    <div class="rest-card">
+        <div class="rest-img">
+            <img alt="{restaurant} dish" src="{image}">
         </div>
-        <h4 class="rest-name">Sandford</h4>
+        <h4 class="rest-name">{rank}. {restaurant}</h4>
         <div class="rest-label">
             <span class="label-purps">
-                type &nbsp;
-                |&nbsp; 
-                local &nbsp;
+                {foodType} &nbsp;
+                | &nbsp; 
+                {location} &nbsp;
                 <label>
-                    <input type="checkbox" name="sanford">
+                    <input type="checkbox" name="{restaurant}">
                     I've been here
                 </label>
             </span>
         </div>
         <div class="rest-text">
-            Dishes can be fleeting, because Sanford serves a seasonal menu and has, long before it was cool.
+            {description}
         </div>
         <div class="rest-filter">
-            <div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-phone"></i></span></a></div>
-            <div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-link"></i></span></a></div>
-            <div class="rest-label"><a href=""><span class="label-grey"><i class="far fa-compass"></i></span></a></div>
-            <div class="rest-label"><a href=""><span class="label-purps">More information &rarr;</span></a></div>
+            <div class="rest-label"><a href="tel:{phone}"><span class="label-grey"><i class="fas fa-phone"></i></span></a></div>
+            <div class="rest-label"><a href="{website}"><span class="label-grey"><i class="fas fa-link"></i></span></a></div>
+            <div class="rest-label"><a href="{location}"><span class="label-grey"><i class="far fa-compass"></i></span></a></div>
+            <div class="rest-label"><a href="{url}{anchor}"><span class="label-purps">More information &rarr;</span></a></div>
         </div>
     </div>
-
-    <div class="rest-card-mob">
-        <div class="rest-img-mob">
-            <img src="https://www.gannett-cdn.com/presto/2018/10/06/PMJS/04634467-887f-4c14-a3ae-ba8014834594-5030-LIST-ARDENT.JPG?width=400">
-        </div>
-        <h4 class="rest-name">Ardent</h4>
-        <div class="rest-label">
-            <span class="label-purps">
-                type &nbsp;
-                |&nbsp;
-                local &nbsp;
-                <label>
-                    <input type="checkbox" name="sanford">
-                    I've been here
-                </label>
-            </span>
-        </div>
-        <div class="rest-text">
-            Ardent, with its changing tasting menu of 10 or so courses, always surprises and delights.
-        </div>
-        <div class="rest-filter">
-            <div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-phone"></i></span></a></div>
-            <div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-link"></i></span></a></div>
-            <div class="rest-label"><a href=""><span class="label-grey"><i class="far fa-compass"></i></span></a></div>
-            <div class="rest-label"><a href=""><span class="label-purps">More information &rarr;</span></a></div>
-        </div>
-    </div>
-
-    <div class="rest-card-mob">
-        <div class="rest-img-mob">
-            <img src="https://www.gannett-cdn.com/presto/2018/10/06/PMJS/80f6e850-e099-42f4-a4de-f082dbb288dc-5030-esterev.JPG?width=400">
-        </div>
-        <h4 class="rest-name">EsterEv</h4>
-        <div class="rest-label">
-            <span class="label-purps">
-                type &nbsp;
-                |&nbsp;
-                local &nbsp;
-                <label>
-                    <input type="checkbox" name="sanford">
-                    I've been here
-                </label>
-            </span>
-        </div>
-        <div class="rest-text">
-            You never know what you’ll get on the tasting menu by chefs Dan Jacobs and Dan Van Rite but it assuredly will be
-            delicious.
-        </div>
-        <div class="rest-filter">
-            <div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-phone"></i></span></a></div>
-            <div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-link"></i></span></a></div>
-            <div class="rest-label"><a href=""><span class="label-grey"><i class="far fa-compass"></i></span></a></div>
-            <div class="rest-label"><a href=""><span class="label-purps">More information &rarr;</span></a></div>
-        </div>
-    </div>  
 </div>
