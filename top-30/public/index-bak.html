@@ -1,0 +1,493 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset='utf8'>
+	<meta name='viewport' content='width=device-width'>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+	<link rel='icon' type='image/png' href='/favicon.png'>
+	<link rel='stylesheet' href='/global.css'>
+    <link rel='stylesheet' href='/bundle.css'>
+    <script src="https://projects.jsonline.com/entertainment/2018/10/21/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+	<script defer src='/bundle.js'></script>
+	
+	<style>
+
+    .flex-container{
+        display: flex;
+        flex-flow: row wrap;
+        margin: 0 auto;
+    }
+    .filter-container{
+        display: flex;
+        width: 100%;
+        padding: 10px 0;
+        border-top: 1px solid #222;
+        border-bottom: 1px solid #222;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        background-color: #fff;
+    }
+    .position-box{
+        display: flex;
+    }
+    .position-box h4{
+        width: 200px; 
+        align-self: center;
+        font-weight: 600;
+        margin-left: 20px;
+        position: relative;
+    }
+    .custom-nav{
+        display: flex;
+        flex-flow: row wrap;
+        align-self: center;
+    }
+    .dine-link{
+        align-self: center;
+        position: absolute;
+        right: 20px;
+    }
+    .custom-nav img.one{
+        width: 40%;
+    }
+    .custom-nav img.two{
+        width: 50%;
+    }
+    .card-container{
+        display: flex;
+        flex-flow: row wrap;
+        max-width: 970px;
+        margin: 0 auto;
+    }
+    .topper-title {
+        font-size: 4rem;
+        color: #222;
+        font-weight: 700;
+        font-family: 'Unify Sans', Tahoma, sans-serif;
+        position: relative;
+        margin-bottom: 5%;
+        z-index: -99;
+    }
+    .topper-title::after {
+        display: block;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        content: " ";
+        width: 100px;
+        height: 230px;
+        border-top: 8px solid #009bff;
+    }
+    .chatter{
+        margin: 2%;
+    }
+    .rest-card-mob{
+        display: flex;
+        flex-flow: row wrap;
+        flex-direction: column;
+        max-width: 300px;
+        box-shadow: 1px 1px 2px #434343;
+        border: 1px solid #ccc;
+        margin: 10px;
+    }
+    .rest-card{
+        display: flex;
+        flex-direction: row;
+        max-width: 600px;
+        box-shadow: 1px 1px 2px #434343;
+        border: 1px solid #ccc;
+    }
+    .rest-img-mob{
+        width: 100%;
+    }
+    .rest-img{
+        flex-basis: 50vw;
+    }
+    .rest-card h4, .rest-card-mob h4{
+        font-family: 'Unify Sans', Tahoma, sans-serif;
+        padding-left: 10px;
+        font-size: 1.4em;
+        margin-block-start: .6em;
+        margin-block-end: .6em;
+    }
+    .rest-info{
+        flex-basis: 50vw;
+    }
+    .rest-text{
+        padding: 10px;
+        font-size: 15px;
+        font-family: 'Unify Sans', Tahoma, sans-serif;
+        color: #333;
+    }
+    .rest-text a{
+        color: #8A32A3;
+    }
+    .rest-filter{
+        display: flex;
+        flex-direction: row;
+        padding: 10px 0;
+        align-items: center;
+    }
+    .rest-label{
+        display: flex;
+        flex-flow: row wrap;
+        font-family: 'Unify Sans', Tahoma, sans-serif;
+        padding: 0 12px;
+        font-size: 14px;
+    }
+    .label-purps{
+        color: #8A32A3;
+    }
+    .label-grey{
+        color: rgb(145, 145, 145);
+    }
+    select{
+        border: 1px solid #222;
+        margin: 1%;
+        background-color: #fff;
+        font-family: 'Unify Sans', Tahoma, sans-serif;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+    /*** custom checkboxes ***/
+        input[type=checkbox] {
+            position: relative;
+            font-size: 20px;
+            margin-left: 3px;
+        }
+        /* to hide the checkbox itself */
+        label>input[type=checkbox]:before {
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            background-color: #FFFFFF;
+            font-family: 'Font Awesome\ 5 Free';
+            display: inline-block;
+            content:"\f0c8";
+            letter-spacing: 5px;
+            color: #8A32A3;
+        }
+        /* space between checkbox and label */
+        label>input[type=checkbox]:checked:before {
+            font-family: 'Font Awesome\ 5 Free';
+            display: inline-block;
+            content:"\f14a";
+            letter-spacing: 5px;   
+            color: #009bff;         
+        }
+
+    .restaurant{
+        font-size: 14px;
+        font-family: 'Unify Sans', Tahoma, sans-serif;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: #999;
+        margin-left: 20px;
+    }
+    .counter{
+        font-family: 'Unify Sans', Tahoma, sans-serif;
+        padding: 0 10px;
+        align-self: center;
+        font-size: 30px;
+    }
+    .end-count{
+        font-size: 34px;
+        color: #009bff;
+        font-weight: 700;
+    }
+    .checklist-share-button-tw{
+        padding-left: 10px;
+    }
+    .checklist-share-button-tw:hover{
+        cursor: alias;
+    }
+    .fab.fa-twitter{
+        color: #999;
+    }
+
+    /* tooltip */
+    .tool-tip {
+        display: inline-block;
+        position: relative;
+        align-self: center;
+        margin-right: 2%;
+    }
+    .tool-tip #tool-tip__icon {
+        color: #999;
+        font-size: 20px;
+    }
+    .tool-tip .tool-tip__info {
+        display: none;
+        background: #262626;
+        color: #fff;
+        border-radius: 3px;
+        font-size: 0.875em;
+        padding: 1em;
+        position: absolute;
+        left: -10px;
+        top: 20px;
+        width: 250px;
+        z-index: 999;
+    }
+    .tool-tip .tool-tip__info:before, .tool-tip .tool-tip__info:after {
+        content: "";
+        transform: rotate(90deg);
+        position: absolute;
+        left: 15px;
+        top: -15px;
+        border-style: solid;
+        border-width: 10px 10px 10px 0;
+    }
+    .tool-tip .tool-tip__info:after {
+        left: 15px;
+        border-right-color: #262626;
+    }
+    .tool-tip .tool-tip__info .info {
+        display: block;
+    }
+    .tool-tip .tool-tip__info .info__title {
+        color: #fff;
+        font-weight: 600;;
+    }
+    .tool-tip:hover .tool-tip__info, .tool-tip:focus .tool-tip__info {
+        display: inline-block;
+    }
+
+    a:focus + .tool-tip .tool-tip__info {
+        display: inline-block;
+    }
+
+
+
+	</style>
+</head>
+
+<body>
+	<!-- <div id="content"></div> -->
+
+	<!-- REPLACE WITH APP EMBED ^^^ -->
+
+
+	<div class="flex-container">
+        <div class="filter-container">
+            <div class="position-box">
+                <div class="custom-nav">
+                    <a href="https://www.jsonline.com/">
+                        <img class="one" src="media/badge-sm.png">
+                        <img class="two" src="media/name-sm.png">
+                    </a>
+                </div>
+
+                <h4>Search the list:</h4>
+                <select name="food-type">
+                    <option value="cuisine">Cuisine</option>
+                    <option value="italian">Italian</option>
+                    <option value="mexican">Mexican</option>
+                    <option value="american">American</option>
+                    <option value="asian">Asian</option>
+                </select>
+                <select name="location">
+                    <option value="neighborhood">Neighborhood</option>
+                    <option value="bay-view">Bay View</option>
+                    <option value="third-ward">Third Ward</option>
+                    <option value="east-side">East Side</option>
+                    <option value="downtown">Downtown</option>
+                </select>
+                <select name="price">
+                    <option value="price">Price</option>
+                    <option value="one">$</option>
+                    <option value="two">$$</option>
+                    <option value="three">$$$</option>
+                    <option value="four">$$$$</option>
+                    <option value="five">$$$$$</option>
+                </select>
+
+                <div class="tool-tip">
+                    <i id="tool-tip__icon" class="fas fa-info-circle"></i>
+                    <p class="tool-tip__info">
+                        <span class="info"><span class="info__title">Price (based on median entrée or equivalent)</span></span>
+                        <span class="info"><br></span>
+                        <span class="info"><span class="info__title">$</span> &rarr; $1-$10</span>
+                        <span class="info"><span class="info__title">$$</span> &rarr; $11-$20</span>
+                        <span class="info"><span class="info__title">$$$</span> &rarr; $21-$30</span>
+                        <span class="info"><span class="info__title">$$$$</span> &rarr; $31-$40</span>
+                        <span class="info"><span class="info__title">$$$$$</span> &rarr; $40-plus</span>
+                    </p>
+                </div>
+
+                <select name="more">
+                    <option value="more">More filters...</option>
+                    <option value="brunch">Open for brunch</option>
+                    <option value="lunch">Open for lunch</option>
+                    <option value="reservations">Takes reservations</option>
+                </select>
+
+            </div>
+                
+            <div class="dine-link">
+                <a href="https://www.jsonline.com/entertainment/dining/">More dining news &rarr;</a>
+            </div>        
+        </div>
+
+        <div class="card-container">
+            <div class="chatter">
+                <div class="topper-title">Search Milwaukee's top 30 list</div>
+                <p>chatter....Spicy jalapeno bacon ipsum dolor amet cow nulla ex pariatur dolore ea. Hamburger leberkas velit beef ribs chuck non in tail sirloin swine tenderloin venison pork loin. Shoulder pork meatloaf beef capicola salami excepteur voluptate est enim short loin dolor ea minim pork chop. Meatball filet mignon shoulder exercitation cow, magna aliqua beef ut ribeye dolore.</p>
+                <p>Ground round ullamco brisket excepteur, shoulder eu aliqua. Labore tri-tip in ut ipsum. Pancetta pork chop t-bone magna, pariatur occaecat officia beef ribs sirloin lorem ball tip ham aliquip short ribs. Ad magna esse, in jerky meatloaf t-bone tenderloin beef rump veniam burgdoggen fugiat irure ullamco. Aliqua hamburger nulla tenderloin incididunt excepteur meatball qui jowl ex ullamco. Laborum ut meatball aliquip reprehenderit ribeye dolor pork chop ad prosciutto nostrud.</p>
+                <div class="counter">
+                    <div class="count-checkboxes-wrapper">
+                        <div id="count">
+                            <span class="end-count" id="count-checked-checkboxes">0</span> restaurants visited 
+                             <span class="checklist-share-button-tw">
+                                 <span id="sharing">
+                                     <a id="countLink" href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </span>
+                            </span>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            <div class="rest-card-mob">
+                <div class="rest-img-mob">
+                    <img src="https://www.gannett-cdn.com/presto/2018/10/06/PMJS/c7dbca3b-9a63-4438-a90f-92a4eead9b10-5030-LIST-SANFORD.JPG?width=400">
+                </div>
+                <h4 class="rest-name">Sandford</h4>
+                <div class="rest-label">
+                    <span class="label-purps">
+                        type &nbsp;
+                        |&nbsp; 
+                        local &nbsp;
+                        <label>
+                            <input type="checkbox" name="sanford">
+                            I've been here
+                        </label>
+                    </span>
+                </div>
+                <div class="rest-text">
+                    Dishes can be fleeting, because Sanford serves a seasonal menu and has, long before it was cool.
+                </div>
+                <div class="rest-filter">
+                    <div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-phone"></i></span></a></div>
+                    <div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-link"></i></span></a></div>
+                    <div class="rest-label"><a href=""><span class="label-grey"><i class="far fa-compass"></i></span></a></div>
+                    <div class="rest-label"><a href=""><span class="label-purps">More information &rarr;</span></a></div>
+                </div>
+            </div>
+            <div class="rest-card-mob">
+                <div class="rest-img-mob">
+                    <img src="https://www.gannett-cdn.com/presto/2018/10/06/PMJS/04634467-887f-4c14-a3ae-ba8014834594-5030-LIST-ARDENT.JPG?width=400">
+                </div>
+                <h4 class="rest-name">Ardent</h4>
+                <div class="rest-label">
+                    <span class="label-purps">
+                        type &nbsp;
+                        |&nbsp;
+                        local &nbsp;
+                        <label>
+                            <input type="checkbox" name="sanford">
+                            I've been here
+                        </label>
+                    </span>
+                </div>
+                <div class="rest-text">
+                    Ardent, with its changing tasting menu of 10 or so courses, always surprises and delights.
+                </div>
+                <div class="rest-filter">
+                    <div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-phone"></i></span></a></div>
+                    <div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-link"></i></span></a></div>
+                    <div class="rest-label"><a href=""><span class="label-grey"><i class="far fa-compass"></i></span></a></div>
+                    <div class="rest-label"><a href=""><span class="label-purps">More information &rarr;</span></a></div>
+                </div>
+            </div>
+            <div class="rest-card-mob">
+                <div class="rest-img-mob">
+                    <img src="https://www.gannett-cdn.com/presto/2018/10/06/PMJS/80f6e850-e099-42f4-a4de-f082dbb288dc-5030-esterev.JPG?width=400">
+                </div>
+                <h4 class="rest-name">EsterEv</h4>
+                <div class="rest-label">
+                    <span class="label-purps">
+                        type &nbsp;
+                        |&nbsp;
+                        local &nbsp;
+                        <label>
+                            <input type="checkbox" name="sanford">
+                            I've been here
+                        </label>
+                    </span>
+                </div>
+                <div class="rest-text">
+                    You never know what you’ll get on the tasting menu by chefs Dan Jacobs and Dan Van Rite but it assuredly will be
+                    delicious.
+                </div>
+                <div class="rest-filter">
+                    <div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-phone"></i></span></a></div>
+                    <div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-link"></i></span></a></div>
+                    <div class="rest-label"><a href=""><span class="label-grey"><i class="far fa-compass"></i></span></a></div>
+                    <div class="rest-label"><a href=""><span class="label-purps">More information &rarr;</span></a></div>
+                </div>
+            </div>
+            
+        </div>
+	</div>
+	<!-- <div class="flex-container">
+		<div class="rest-card">
+			<div class="rest-img">
+				<img
+					src="https://www.gannett-cdn.com/presto/2018/10/06/PMJS/c7dbca3b-9a63-4438-a90f-92a4eead9b10-5030-LIST-SANFORD.JPG?width=400">
+			</div>
+			<div class="rest-info">
+				<h4 class="rest-name">Sandford</h4>
+				<div class="rest-label"><span class="label-purps">type &nbsp;|&nbsp; local</span></div>
+				<div class="rest-text">
+					Dishes can be fleeting, because Sanford serves a seasonal menu and has, long before it was cool.
+				</div>
+				<div class="rest-filter">
+					<div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-phone"></i></span></a></div>
+					<div class="rest-label"><a href=""><span class="label-grey"><i class="fas fa-link"></i></span></a></div>
+					<div class="rest-label"><a href=""><span class="label-grey"><i class="far fa-compass"></i></span></a></div>
+					<div class="rest-label"><a href=""><span class="label-purps">More information &rarr;</span></a></div>
+				</div>
+			</div>
+		</div>
+	</div> -->
+<script>
+    $(document).ready(function () {
+        var $checkboxes = $('input[type="checkbox"]');
+
+        $checkboxes.change(function () {
+            var countCheckedCheckboxes = $checkboxes.filter(':checked').length;
+            $('#count-checked-checkboxes').text(countCheckedCheckboxes);
+            $('#edit-count-checked-checkboxes').val(countCheckedCheckboxes);
+        });
+    });
+
+    // TWEET UPDATED TEXT
+        $('#countLink').click(function () {
+            // Get the count text
+            var countText = $('#count').text();
+            // Convert to string
+            var countStr = countText.toString();
+            // Find count length
+            var countLen = countText.length;
+
+            // Formats count for length
+            if (countLen > 270) { // max chacters allowed
+                // trim, and allow space for '...'"
+                var trimCount = countStr.substring(0, 200);
+                var trimCount = trimCount.trim(); //<-- ensures the last character isnt ' '
+                countStr = trimCount + "...";
+            }
+
+            // Update the link
+            var linkRef = "http://twitter.com/share?url=https://www.jsonline.com/top30&text=" + countStr + " " + "via @journalsentinel and @mkediner."; //+ "&screen_name=mkediner"
+            $('#countLink').attr('href', linkRef);
+        });
+</script>
+
+</body>
+</html>
