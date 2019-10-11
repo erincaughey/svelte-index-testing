@@ -5,6 +5,11 @@
     export let brunch;
     export let lunch;
     export let convo;
+
+    export let foodOptions;
+    export let placeOptions;
+    export let priceOptions;
+
 </script>
 
 <style>
@@ -18,6 +23,7 @@
     position: sticky;
     top: 0;
     background-color: #fff;
+    z-index: 9999;
 }
 select{
     border: 1px solid #222;
@@ -31,7 +37,7 @@ select{
     display: flex;
 }
 .position-box h4{
-    width: 200px; 
+    width: 220px; 
     align-self: center;
     font-weight: 600;
     margin-left: 20px;
@@ -119,28 +125,24 @@ a:focus + .tool-tip .tool-tip__info {
 
         <!-- Loop through uniques -->
         <select name="food-type">
-            <option value="cuisine">Cuisine</option>
-            <option value="italian">Italian</option>
-            <option value="mexican">Mexican</option>
-            <option value="american">American</option>
-            <option value="asian">Asian</option>
+        <option value="none">Food Type</option>
+        {#each foodOptions as foodOption, i}
+            <option value="{foodOption}">{foodOption}</option>
+        {/each}
         </select>
 
-        <select name="location">
-            <option value="neighborhood">Neighborhood</option>
-            <option value="bay-view">Bay View</option>
-            <option value="third-ward">Third Ward</option>
-            <option value="east-side">East Side</option>
-            <option value="downtown">Downtown</option>
+        <select name="neighborhood">
+        <option value="none">Neighborhood</option>
+        {#each placeOptions as placeOption, i}
+            <option value="{placeOption}">{placeOption}</option>
+        {/each}
         </select>
 
         <select name="price">
-            <option value="price">Price</option>
-            <option value="one">$</option>
-            <option value="two">$$</option>
-            <option value="three">$$$</option>
-            <option value="four">$$$$</option>
-            <option value="five">$$$$$</option>
+        <option value="none">Price</option>
+        {#each priceOptions as priceOption, i}
+            <option value="{priceOption}">{priceOption}</option>
+        {/each}
         </select>
 
         <div class="tool-tip">
@@ -160,7 +162,7 @@ a:focus + .tool-tip .tool-tip__info {
             <option value="more">More filters...</option>
             <option value="brunch">Open for brunch</option>
             <option value="lunch">Open for lunch</option>
-            <option value="reservations">Takes reservations</option>
+            <option value="reservations">Good for conversation</option>
         </select>
     </div>        
     <div class="dine-link">

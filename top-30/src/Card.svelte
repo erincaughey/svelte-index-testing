@@ -56,58 +56,15 @@
     max-width: 970px;
     margin: 0 auto;
 }
-.topper-title {
-    font-size: 4rem;
-    color: #222;
-    font-weight: 700;
-    font-family: 'Unify Sans', Tahoma, sans-serif;
-    position: relative;
-    margin-bottom: 5%;
-    z-index: -99;
-}
-.topper-title::after {
-    display: block;
-    position: absolute;
-    top: 100px;
-    left: 0;
-    content: " ";
-    width: 100px;
-    height: 230px;
-    border-top: 8px solid #009bff;
-}
-.chatter{
-    margin: 2%;
-}
-.counter{
-    font-family: 'Unify Sans', Tahoma, sans-serif;
-    padding: 0 10px;
-    align-self: center;
-    font-size: 30px;
-}
-.end-count{
-    font-size: 34px;
-    color: #009bff;
-    font-weight: 700;
-}
-.checklist-share-button-tw{
-    padding-left: 10px;
-}
-.checklist-share-button-tw:hover{
-    cursor: alias;
-}
-.fab.fa-twitter{
-    color: #999;
-}
 .rest-card{
     display: flex;
     flex-flow: row wrap;
     flex-direction: column;
-    max-width: 300px;
+    max-width: 400px;
     box-shadow: 1px 1px 2px #434343;
     border: 1px solid #ccc;
     margin: 10px;
 }
-
 .rest-img{
     width: 100%;
 }
@@ -117,6 +74,9 @@
     font-size: 1.4em;
     margin-block-start: .6em;
     margin-block-end: .6em;
+}
+.rest-name span{
+    font-weight: 600;
 }
 .rest-text{
     padding: 10px;
@@ -148,7 +108,7 @@
     input[type=checkbox] {
         position: relative;
         font-size: 20px;
-        margin-left: 3px;
+        margin-left: 15px;
     }
     /* to hide the checkbox itself */
     label>input[type=checkbox]:before {
@@ -168,52 +128,35 @@
         display: inline-block;
         content:"\f14a";
         letter-spacing: 5px;   
-        color: #009bff;         
+        color: #009bff;
     }
 </style>
 
 <div class="card-container">
-    <div class="chatter">
-        <div class="topper-title">Search Milwaukee's top 30 list</div>
-        <p>chatter....Spicy jalapeno bacon ipsum dolor amet cow nulla ex pariatur dolore ea. Hamburger leberkas velit beef ribs chuck non in tail sirloin swine tenderloin venison pork loin. Shoulder pork meatloaf beef capicola salami excepteur voluptate est enim short loin dolor ea minim pork chop. Meatball filet mignon shoulder exercitation cow, magna aliqua beef ut ribeye dolore.</p>
-        <p>Ground round ullamco brisket excepteur, shoulder eu aliqua. Labore tri-tip in ut ipsum. Pancetta pork chop t-bone magna, pariatur occaecat officia beef ribs sirloin lorem ball tip ham aliquip short ribs. Ad magna esse, in jerky meatloaf t-bone tenderloin beef rump veniam burgdoggen fugiat irure ullamco. Aliqua hamburger nulla tenderloin incididunt excepteur meatball qui jowl ex ullamco. Laborum ut meatball aliquip reprehenderit ribeye dolor pork chop ad prosciutto nostrud.</p>
-        <div class="counter">
-            <div class="count-checkboxes-wrapper">
-                <div id="count">
-                    <span class="end-count" id="count-checked-checkboxes">0</span> restaurants visited 
-                    <span class="checklist-share-button-tw">
-                        <span id="sharing">
-                            <a id="countLink" href="#something" target="_blank"><i class="fab fa-twitter"></i></a>
-                        </span>
-                    </span>
-                </div> 
-            </div>
-        </div>
-    </div>
-
     <div class="rest-card">
         <div class="rest-img">
             <img alt="{restaurant} dish" src="{image}">
         </div>
-        <h4 class="rest-name">{rank}. {restaurant}</h4>
+        <h4 class="rest-name"><span>{rank}</span> {restaurant}</h4>
         <div class="rest-label">
             <span class="label-purps">
                 {foodType} &nbsp;
                 | &nbsp; 
-                {location} &nbsp;
-                <label>
-                    <input type="checkbox" name="{restaurant}">
-                    I've been here
-                </label>
+                {neighborhood} &nbsp;
+                <br>
             </span>
         </div>
         <div class="rest-text">
             {description}
         </div>
+        <label>
+            <input type="checkbox" name="{restaurant}">
+            I've been here
+        </label>
         <div class="rest-filter">
             <div class="rest-label"><a href="tel:{phone}"><span class="label-grey"><i class="fas fa-phone"></i></span></a></div>
-            <div class="rest-label"><a href="{website}"><span class="label-grey"><i class="fas fa-link"></i></span></a></div>
-            <div class="rest-label"><a href="{location}"><span class="label-grey"><i class="far fa-compass"></i></span></a></div>
+            <div class="rest-label"><a href="{website}" target="_blank"><span class="label-grey"><i class="fas fa-link"></i></span></a></div>
+            <div class="rest-label"><a href="{location}" target="_blank"><span class="label-grey"><i class="far fa-compass"></i></span></a></div>
             <div class="rest-label"><a href="{url}{anchor}"><span class="label-purps">More information &rarr;</span></a></div>
         </div>
     </div>

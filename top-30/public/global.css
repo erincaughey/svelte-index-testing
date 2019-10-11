@@ -1,11 +1,51 @@
 .flex-container{
 	display: flex;
 	flex-flow: row wrap;
-	margin: 0 auto;
+    margin: 0 auto;
+    max-width: 1400px;
 }
 img{
 	width: 100%;;
 }
 a {
 	text-decoration: none;
+}
+.topper-title {
+    font-size: 4rem;
+    color: #222;
+    font-weight: 700;
+    font-family: 'Unify Sans', Tahoma, sans-serif;
+    position: relative;
+    margin-bottom: 5%;
+    z-index: -99;
+}
+.topper-title::after {
+    display: block;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    content: " ";
+    width: 100px;
+    height: 230px;
+    border-top: 8px solid #009bff;
+}
+.chatter{
+    margin: 2%;
+}
+.counter{
+    font-family: 'Unify Sans', Tahoma, sans-serif;
+    padding: 0 10px;
+    align-self: center;
+    font-size: 30px;
+}
+.end-count{
+    font-size: 34px;
+    color: #009bff;
+    font-weight: 700;
+}
+.checklist-share-button-tw{
+    padding-left: 10px;
+}
+.fab.fa-twitter{
+    color: #999;
 }
