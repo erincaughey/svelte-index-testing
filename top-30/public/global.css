@@ -1,7 +1,7 @@
 .flex-container{
 	display: flex;
 	flex-flow: row wrap;
-    margin: 0 auto;
+    margin: 2% auto;
     max-width: 1400px;
 }
 img{
@@ -11,15 +11,20 @@ a {
 	text-decoration: none;
 }
 .topper-title {
-    font-size: 4rem;
+    font-size: 3.7rem;
     color: #222;
     font-weight: 700;
     font-family: 'Unify Sans', Tahoma, sans-serif;
-    position: relative;
     margin-bottom: 5%;
     z-index: -99;
 }
-.topper-title::after {
+.chatter{
+    margin: 2%;
+    max-width: 1024px;
+    margin: 0 auto;
+    position: relative;
+}
+.chatter::before {
     display: block;
     position: absolute;
     top: 100px;
@@ -29,8 +34,8 @@ a {
     height: 230px;
     border-top: 8px solid #009bff;
 }
-.chatter{
-    margin: 2%;
+.chatter a{
+    color: #009bff;
 }
 .counter{
     font-family: 'Unify Sans', Tahoma, sans-serif;
@@ -48,4 +53,37 @@ a {
 }
 .fab.fa-twitter{
     color: #999;
+}
+.card-container{
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+@media(max-width: 1024px){
+    .flex-container{
+        margin: 2%;
+    }
+}
+
+@media(max-width: 850px){
+    .chatter::before {
+        top: 150px;
+        clear: both;
+    }
+}
+@media(max-width: 770px){
+    .flex-container{
+        margin: 2%;
+    }
+    .card-container{
+        display: inline;
+    }
+    .topper-title {
+        font-size: 3rem;
+    }
+    .chatter::before {
+        top: 140px;
+    }
 }

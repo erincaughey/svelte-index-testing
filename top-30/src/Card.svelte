@@ -50,17 +50,11 @@
 </script>
 
 <style>
-.card-container{
-    display: flex;
-    flex-flow: row wrap;
-    max-width: 970px;
-    margin: 0 auto;
-}
 .rest-card{
     display: flex;
     flex-flow: row wrap;
     flex-direction: column;
-    max-width: 400px;
+    max-width: 300px;
     box-shadow: 1px 1px 2px #434343;
     border: 1px solid #ccc;
     margin: 10px;
@@ -132,32 +126,30 @@
     }
 </style>
 
-<div class="card-container">
-    <div class="rest-card">
-        <div class="rest-img">
-            <img alt="{restaurant} dish" src="{image}">
-        </div>
-        <h4 class="rest-name"><span>{rank}</span> {restaurant}</h4>
-        <div class="rest-label">
-            <span class="label-purps">
-                {foodType} &nbsp;
-                | &nbsp; 
-                {neighborhood} &nbsp;
-                <br>
-            </span>
-        </div>
-        <div class="rest-text">
-            {description}
-        </div>
-        <label>
-            <input type="checkbox" name="{restaurant}">
-            I've been here
-        </label>
-        <div class="rest-filter">
-            <div class="rest-label"><a href="tel:{phone}"><span class="label-grey"><i class="fas fa-phone"></i></span></a></div>
-            <div class="rest-label"><a href="{website}" target="_blank"><span class="label-grey"><i class="fas fa-link"></i></span></a></div>
-            <div class="rest-label"><a href="{location}" target="_blank"><span class="label-grey"><i class="far fa-compass"></i></span></a></div>
-            <div class="rest-label"><a href="{url}{anchor}"><span class="label-purps">More information &rarr;</span></a></div>
-        </div>
+<div class="rest-card">
+    <div class="rest-img">
+        <img alt="{restaurant} dish" src="{image}">
+    </div>
+    <h4 class="rest-name"><span>{rank}</span> {restaurant}</h4>
+    <div class="rest-label">
+        <span class="label-purps">
+            {foodType} &nbsp;
+            | &nbsp; 
+            {neighborhood} &nbsp;
+            <br>
+        </span>
+    </div>
+    <div class="rest-text">
+        {description}
+    </div>
+    <label>
+        <input type="checkbox" name="{restaurant}">
+        I've been here
+    </label>
+    <div class="rest-filter">
+        <div class="rest-label"><a href="tel:{phone}"><span class="label-grey"><i class="fas fa-phone"></i></span></a></div>
+        <div class="rest-label"><a href="{website}" target="_blank"><span class="label-grey"><i class="fas fa-link"></i></span></a></div>
+        <div class="rest-label"><a href="{location}" target="_blank"><span class="label-grey"><i class="far fa-compass"></i></span></a></div>
+        <div class="rest-label"><a href="{url}{anchor}"><span class="label-purps">More information &rarr;</span></a></div>
     </div>
 </div>

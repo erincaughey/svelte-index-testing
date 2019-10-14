@@ -29,7 +29,7 @@
 <div class="chatter">
 	<div class="topper-title">Search Milwaukee's top 30 list</div>
 	<p>chatter....Spicy jalapeno bacon ipsum dolor amet cow nulla ex pariatur dolore ea. Hamburger leberkas velit beef ribs chuck non in tail sirloin swine tenderloin venison pork loin. Shoulder pork meatloaf beef capicola salami excepteur voluptate est enim short loin dolor ea minim pork chop. Meatball filet mignon shoulder exercitation cow, magna aliqua beef ut ribeye dolore.</p>
-	<p>Ground round ullamco brisket excepteur, shoulder eu aliqua. Labore tri-tip in ut ipsum. Pancetta pork chop t-bone magna, pariatur occaecat officia beef ribs sirloin lorem ball tip ham aliquip short ribs. Ad magna esse, in jerky meatloaf t-bone tenderloin beef rump veniam burgdoggen fugiat irure ullamco. Aliqua hamburger nulla tenderloin incididunt excepteur meatball qui jowl ex ullamco. Laborum ut meatball aliquip reprehenderit ribeye dolor pork chop ad prosciutto nostrud.</p>
+	<p>Use the filters above to search for a restaurant by food style, neighborhood, price range and more. Use the check boxes on each restaurant card to tally how many of this year's 50 you've eaten at and share your sucess with friends. And for a more detailed description of any restaurant click on the "More information" option or visit the full <a href="https://www.jsonline.com/in-depth/entertainment/dining/carol-deptolla/2019/10/11/best-restaurants-milwaukee-2019-critic-carol-deptollas-top-30/2338732001/">Milwaukee 50 list</a> to learn more.</p>
 	<div class="counter">
 		<div class="count-checkboxes-wrapper">
 			<div id="count">
@@ -44,7 +44,9 @@
 	</div>
 </div>
 
-{#each restaurants as restaurant, i}
-	<Card image = {restaurant.image} rank = {restaurant.rank} restaurant = {restaurant.restaurant} foodType = {restaurant.foodType} neighborhood = {restaurant.neighborhood} description = {restaurant.description} phone = {restaurant.phone} website = {restaurant.website} location = {restaurant.location} url = {restaurant.url} anchor = {restaurant.anchor}/>
-{/each}
+	<div class="card-container">
+		{#each restaurants as restaurant, i}
+			<Card image = {restaurant.image} rank = {restaurant.rank} restaurant = {restaurant.restaurant} foodType = {restaurant.foodType} neighborhood = {restaurant.neighborhood} description = {restaurant.description} phone = {restaurant.phone} website = {restaurant.website} location = {restaurant.location} url = {restaurant.url} anchor = {restaurant.anchor}/>
+		{/each}
+	</div>
 </div>

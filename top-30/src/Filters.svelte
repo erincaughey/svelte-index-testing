@@ -15,10 +15,7 @@
 <style>
 .filter-container{
     display: flex;
-    width: 100%;
-    padding: 10px 0;
-    border-top: 1px solid #222;
-    border-bottom: 1px solid #222;
+    border-bottom: 1px solid #999;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
@@ -31,10 +28,15 @@ select{
     background-color: #fff;
     font-family: 'Unify Sans', Tahoma, sans-serif;
     font-weight: 400;
-    text-transform: uppercase;
 }
 .position-box{
     display: flex;
+}
+.mobile-stack{
+    display: flex;
+    flex-direction: row;
+    max-height: 90%;
+    align-self: center;
 }
 .position-box h4{
     width: 220px; 
@@ -45,7 +47,8 @@ select{
 }
 .custom-nav{
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-self: center;
 }
 .dine-link{
@@ -59,6 +62,7 @@ select{
 .custom-nav img.two{
     width: 50%;
 }
+
 /* tooltip */
 .tool-tip {
     display: inline-block;
@@ -110,6 +114,68 @@ select{
 a:focus + .tool-tip .tool-tip__info {
     display: inline-block;
 }
+
+@media(max-width: 1400px){
+    #hide{
+        display: none;
+    }
+}
+
+@media(max-width: 1024px){
+    #hide{
+        display: none;
+    }
+    .position-box{
+        display: inline-flex;
+    }
+    .custom-nav img.one{
+    width: 90%;
+}
+.custom-nav img.two{
+    width: 100%;
+}
+}
+@media(max-width: 920px){
+    .mobile-stack{
+        display: flex;
+        flex-direction: column;
+        margin: 2% 0;
+    }
+    .position-box h4{
+        margin: 0;
+    }
+    .tool-tip {
+        align-self: flex-end;
+    }
+    .tool-tip #tool-tip__icon {
+        color: #999;
+        font-size: 20px;
+        position: absolute;
+        top: -24px;
+        left: 10px;
+    }
+    .tool-tip .tool-tip__info {
+        left: -200px;
+    }
+    .tool-tip .tool-tip__info:before, .tool-tip .tool-tip__info:after {
+        left: 220px;
+    }
+    .tool-tip .tool-tip__info:after {
+        left: 220px;
+    }
+    #hide{
+        display: none;
+    }
+}
+
+@media(max-width: 770px){
+    #hide{
+        display: none;
+    }
+    .position-box{
+        display: inline-flex;
+    }
+}
 </style>
 
 <div class="filter-container">
@@ -121,51 +187,52 @@ a:focus + .tool-tip .tool-tip__info {
             </a>
         </div>
 
-        <h4>Search the list:</h4>
+        <div class="mobile-stack">
+            <h4>Filter by:</h4>
 
-        <!-- Loop through uniques -->
-        <select name="food-type">
-        <option value="none">Food Type</option>
-        {#each foodOptions as foodOption, i}
-            <option value="{foodOption}">{foodOption}</option>
-        {/each}
-        </select>
+            <select name="food-type">
+            <option value="none">Food Type</option>
+            {#each foodOptions as foodOption, i}
+                <option value="{foodOption}">{foodOption}</option>
+            {/each}
+            </select>
 
-        <select name="neighborhood">
-        <option value="none">Neighborhood</option>
-        {#each placeOptions as placeOption, i}
-            <option value="{placeOption}">{placeOption}</option>
-        {/each}
-        </select>
+            <select name="neighborhood">
+            <option value="none">Neighborhood</option>
+            {#each placeOptions as placeOption, i}
+                <option value="{placeOption}">{placeOption}</option>
+            {/each}
+            </select>
 
-        <select name="price">
-        <option value="none">Price</option>
-        {#each priceOptions as priceOption, i}
-            <option value="{priceOption}">{priceOption}</option>
-        {/each}
-        </select>
+            <select name="price">
+            <option value="none">Price</option>
+            {#each priceOptions as priceOption, i}
+                <option value="{priceOption}">{priceOption}</option>
+            {/each}
+            </select>
 
-        <div class="tool-tip">
-            <i id="tool-tip__icon" class="fas fa-info-circle"></i>
-            <p class="tool-tip__info">
-                <span class="info"><span class="info__title">Price (based on median entrée or equivalent)</span></span>
-                <span class="info"><br></span>
-                <span class="info"><span class="info__title">$</span> &rarr; $1-$10</span>
-                <span class="info"><span class="info__title">$$</span> &rarr; $11-$20</span>
-                <span class="info"><span class="info__title">$$$</span> &rarr; $21-$30</span>
-                <span class="info"><span class="info__title">$$$$</span> &rarr; $31-$40</span>
-                <span class="info"><span class="info__title">$$$$$</span> &rarr; $40-plus</span>
-            </p>
+            <div class="tool-tip">
+                <i id="tool-tip__icon" class="fas fa-info-circle"></i>
+                <p class="tool-tip__info">
+                    <span class="info"><span class="info__title">Price (based on median entrée or equivalent)</span></span>
+                    <span class="info"><br></span>
+                    <span class="info"><span class="info__title">$</span> &rarr; $1-$10</span>
+                    <span class="info"><span class="info__title">$$</span> &rarr; $11-$20</span>
+                    <span class="info"><span class="info__title">$$$</span> &rarr; $21-$30</span>
+                    <span class="info"><span class="info__title">$$$$</span> &rarr; $31-$40</span>
+                    <span class="info"><span class="info__title">$$$$$</span> &rarr; $40-plus</span>
+                </p>
+            </div>
+
+            <select name="more">
+                <option value="more">More...</option>
+                <option value="brunch">Open for brunch</option>
+                <option value="lunch">Open for lunch</option>
+                <option value="reservations">Good for conversation</option>
+            </select>
         </div>
-
-        <select name="more">
-            <option value="more">More filters...</option>
-            <option value="brunch">Open for brunch</option>
-            <option value="lunch">Open for lunch</option>
-            <option value="reservations">Good for conversation</option>
-        </select>
     </div>        
     <div class="dine-link">
-        <a href="https://www.jsonline.com/entertainment/dining/">More dining news &rarr;</a>
+        <a id="hide" href="https://www.jsonline.com/entertainment/dining/">More dining news &rarr;</a>
     </div>        
 </div>
