@@ -9,12 +9,11 @@
     export let phone;
     export let website;
     export let location;
-    let url = 'https://www.jsonline.com/in-depth/entertainment/dining/carol-deptolla/2019/10/11/best-restaurants-milwaukee-2019-critic-carol-deptollas-top-30/2338732001/';
     export let anchor;
-
-    //if has rank
-    //export let url = 'https://www.jsonline.com/in-depth/entertainment/dining/carol-deptolla/2019/10/11/best-restaurants-milwaukee-2019-critic-carol-deptollas-top-30/2338732001/';
-    //export let url = 'https://www.jsonline.com/in-depth/entertainment/dining/carol-deptolla/2019/10/11/best-casual-cheap-restaurants-milwaukee-2019-carol-deptolla-top-50/3902521002/';
+    let url = 'https://www.jsonline.com/in-depth/entertainment/dining/carol-deptolla/2019/10/11/best-restaurants-milwaukee-2019-critic-carol-deptollas-top-30/2338732001/';
+    $:if(rank === ''){
+        url = 'https://www.jsonline.com/in-depth/entertainment/dining/carol-deptolla/2019/10/11/best-casual-cheap-restaurants-milwaukee-2019-carol-deptolla-top-50/3902521002/';
+    }
 
     jquery(document).ready(function () {
         var $checkboxes = jquery('input[type="checkbox"]');
@@ -150,6 +149,6 @@
         <div class="rest-label"><a href="tel:{phone}"><span class="label-grey"><i class="fas fa-phone"></i></span></a></div>
         <div class="rest-label"><a href="{website}" target="_blank"><span class="label-grey"><i class="fas fa-link"></i></span></a></div>
         <div class="rest-label"><a href="{location}" target="_blank"><span class="label-grey"><i class="far fa-compass"></i></span></a></div>
-        <div class="rest-label"><a href="{url}{anchor}"><span class="label-purps">More information &rarr;</span></a></div>
+        <div class="rest-label"><a href="{url}#{anchor}"><span class="label-purps">More information &rarr;</span></a></div>
     </div>
 </div>
