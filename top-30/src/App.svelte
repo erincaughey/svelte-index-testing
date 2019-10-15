@@ -24,8 +24,8 @@
 	
 </script>
 
-<Filters foodOptions = {foodOptions} placeOptions = {placeOptions} priceOptions = {priceOptions}/>
 <div class="flex-container">
+<Filters foodOptions = {foodOptions} placeOptions = {placeOptions} priceOptions = {priceOptions}/>
 <div class="chatter">
 	<div class="topper-title">Search Milwaukee's top 30 list</div>
 	<p>chatter....Spicy jalapeno bacon ipsum dolor amet cow nulla ex pariatur dolore ea. Hamburger leberkas velit beef ribs chuck non in tail sirloin swine tenderloin venison pork loin. Shoulder pork meatloaf beef capicola salami excepteur voluptate est enim short loin dolor ea minim pork chop. Meatball filet mignon shoulder exercitation cow, magna aliqua beef ut ribeye dolore.</p>
