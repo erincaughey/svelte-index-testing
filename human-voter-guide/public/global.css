@@ -29,7 +29,7 @@ body{
     content: " ";
     width: 50px;
     height: 20px;
-    border-top: 7px solid #009bff;
+    border-top: 7px solid #D55C2B;
 }
 form{
 	margin: 0 auto;
@@ -80,7 +80,7 @@ form .fr_button:focus, form .fr_button:hover {
     margin: 5% 35%;
     width: 40%;
     height: 10px;
-    background-color: #009bff;
+    background-color: #D55C2B;
 }
 .flex-container{
 	display: flex;

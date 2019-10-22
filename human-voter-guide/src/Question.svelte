@@ -22,7 +22,7 @@
     display: flex;
     margin: 5px 0;
     padding: 10px;
-    border: 1px solid #009bff;
+    border: 1px solid #D55C2B;
     background-color: #fff;
     box-shadow: 0 0 2px #d3d3d3;
     box-sizing: border-box;
@@ -40,13 +40,13 @@
     cursor: pointer;
 }
 .voter-question:hover {
-  color: #009bff;
+  color: #D55C2B;
 }
 .voter-question:before{
     font-size: 24px;
     padding: 3px 10px;
     content: '+';
-    color: #009bff;
+    color: #D55C2B;
     font-weight: 900;
     cursor: pointer;
 }
